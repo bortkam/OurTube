@@ -100,5 +100,5 @@ settings.json
 # Compiled youtube_dl with download.py script
 dist
 
-# build
-build
+# CSS compiled by SASS
+compiled_css
