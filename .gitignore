@@ -101,4 +101,5 @@ settings.json
 dist
 
 # CSS compiled by SASS
-compiled_css
+custom.CSS
+custom.css.map
