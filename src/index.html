@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+		<title>OurTube</title>
+	 	<link href="../node_modules\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet">
+		<link href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+
+		<link href="styles.css" rel="stylesheet">
+		<link href="scss/custom.css" rel="stylesheet">
+	 	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+	 	<script defer type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	 	<script defer type="text/javascript" src="renderer.js"></script>
+	</head>
+	
+	<body data-bs-theme="light">
+		<!-- Main screen -->
+		<div class="container">
+			<div id="appContainer" class="row justify-content-center align-items-center">
+				<div class="text-center">
+					<img src="media/logo.png" width="125px" height="125px"/>
+				</div>
+				<div class="input-group">
+					<input class="form-control disabled" id="urlField" type="text" placeholder="Paste video url here" 
+						aria-label="default input example">
+					<button type="button" id="pasteButton" class="btn btn-outline-primary">
+						Paste</button>
+					<button type="button" id="clearButton" class="btn btn-outline-primary">
+						Clear</button>
+				</div>
+				<div class="text-center">
+					<button type="button" id="downloadButton" class="btn btn-secondary disabled">
+						Download <i class="bi bi-download"></i>
+					</button>
+				</div>
+
+				<div id="downloadingStatus" class="spinner-border text-secondary invisible" role="status"> </div>
+
+				<div class="text-end"> 
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						<i class="bi bi-gear"></i>
+					</button>
+				</div>
+				
+			</div>
+		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Settings</h1>
+				</div>
+				<div class="modal-body">
+					<span>Default download folder:</span>
+					<div class="input-group">
+						<input id="defaultLocationField" class="form-control" type="text" 
+							placeholder="Click me to set default folder" aria-label="default input example" readonly>
+						<button type="button" id="folderPickerButton" class="btn btn-outline-primary">
+							Select folder</button>
+					</div>
+					<br>
+					<span>Color theme:</span>
+					<div>
+						<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+							<input type="radio" class="btn-check" name="btnradio" id="lightTheme" autocomplete="off" checked>
+							<label class="btn btn-outline-primary" for="lightTheme">
+								<i class="bi bi-sun"></i>
+							</label>
+							
+							<input type="radio" class="btn-check" name="btnradio" id="darkTheme" autocomplete="off">
+							<label class="btn btn-outline-primary" for="darkTheme">
+								<i class="bi bi-moon"></i>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" id="saveSettingsButton" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+			</div>
+		</div>
+
+	</body>
+	
+</html>
