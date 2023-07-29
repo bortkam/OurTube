@@ -99,3 +99,6 @@ settings.json
 
 # Compiled youtube_dl with download.py script
 dist
+
+# build
+build
